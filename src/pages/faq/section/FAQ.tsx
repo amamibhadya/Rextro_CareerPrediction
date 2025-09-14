@@ -3,34 +3,34 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqData = [
   {
-    question: "What is Axis Token?",
+    question: "What is FutureMe?",
     answer:
-      "Axis is a utility token used for fast, secure, and low-cost digital payments. It also gives access to special services and rewards.",
+      "FutureMe is a utility token used for fast, secure, and low-cost digital payments. It also gives access to special services and rewards.",
   },
   {
-    question: "How can I get Axis Tokens?",
+    question: "What is FutureMe?",
     answer:
-      "You can buy Axis Tokens from supported exchanges or directly through our official platform.",
+      "FutureMe is a utility token used for fast, secure, and low-cost digital payments. It also gives access to special services and rewards.",
   },
   {
-    question: "Is Axis Token safe to use?",
+    question: "What is FutureMe?",
     answer:
-      "Yes. Axis uses blockchain and smart security systems to keep your funds safe and your transactions private.",
+      "FutureMe is a utility token used for fast, secure, and low-cost digital payments. It also gives access to special services and rewards.",
   },
   {
-    question: "Where can I store Axis Tokens?",
+    question: "What is FutureMe?",
     answer:
-      "You can store Axis Tokens in any supported digital wallet that works with our platform.",
+      "FutureMe is a utility token used for fast, secure, and low-cost digital payments. It also gives access to special services and rewards.",
   },
   {
-    question: "What can I do with Axis Tokens?",
+    question: "What is FutureMe?",
     answer:
-      "You can use Axis Tokens to send money, pay for services, join reward programs, and access smart features.",
+      "FutureMe is a utility token used for fast, secure, and low-cost digital payments. It also gives access to special services and rewards.",
   },
   {
-    question: "Can I use Axis Tokens globally?",
+    question: "What is FutureMe?",
     answer:
-      "Yes. Axis Tokens are built for global use, allowing you to make fast and secure payments from anywhere in the world.",
+      "FutureMe is a utility token used for fast, secure, and low-cost digital payments. It also gives access to special services and rewards.",
   },
 ];
 
@@ -42,11 +42,11 @@ function FAQSection() {
   };
 
   return (
-    <div className="relative rounded-[24px] bg-[#E1E1E1] px-[14px] py-[16px] lg:px-[63px] lg:py-[56px]">
+    <div className="relative rounded-[24px]  px-[14px] py-[16px] lg:px-[63px] lg:py-[56px]">
       <section className="flex">
-        <div className="w-full rounded-[24px] bg-[#E1E1E1]">
-          <div className="rounded-[24px] bg-[#FFFFFF] p-[16px] lg:p-[36px]">
-            <p className="pb-[16px] text-center font-dmsans text-[32px] font-bold leading-[40px] lg:pb-[24px] lg:text-[64px] lg:leading-[72px]">
+        <div className="w-full rounded-[24px] bg-[#151616]">
+          <div className="rounded-[24px]  p-[16px] lg:p-[36px]">
+            <p className="pb-[16px] text-center font-fredoka text-[32px] font-bold leading-[40px] lg:pb-[24px] text-white lg:text-[64px] lg:leading-[72px]">
               Your Questions, Answered
             </p>
 
@@ -54,11 +54,11 @@ function FAQSection() {
               {faqData.map((faq, index) => (
                 <div
                   key={index}
-                  className="w-full cursor-pointer rounded-[24px] border-[1px] border-[#383838] p-[16px] transition-shadow hover:shadow-md"
+                  className="w-full cursor-pointer rounded-[24px] border-[1px] border-[#fc33a4] p-[16px] transition-shadow hover:shadow-md"
                   onClick={() => toggle(index)}
                 >
                   <div className="flex items-center justify-between">
-                    <p className="font-dmsansb text-[18px] font-bold leading-[24px] text-[#000000]">
+                    <p className="font-fredoka text-[18px] font-bold leading-[24px] text-white">
                       {faq.question}
                     </p>
                     {openIndex === index ? (
@@ -68,7 +68,7 @@ function FAQSection() {
                     )}
                   </div>
                   {openIndex === index && (
-                    <p className="mt-2 font-dmsans text-[16px] font-normal leading-[24px] text-[#000000]">
+                    <p className="mt-2 font-fredoka text-[16px] font-normal leading-[24px] text-white">
                       {faq.answer}
                     </p>
                   )}

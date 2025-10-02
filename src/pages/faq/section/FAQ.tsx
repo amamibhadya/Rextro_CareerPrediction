@@ -44,10 +44,10 @@ function FAQSection() {
   return (
     <div className="relative rounded-[24px]  px-[14px] py-[16px] lg:px-[63px] lg:py-[56px]">
       <section className="flex">
-        <div className="w-full rounded-[24px] bg-[#151616]">
+        <div className="w-full rounded-[24px] bg-[#161616]">
           <div className="rounded-[24px]  p-[16px] lg:p-[36px]">
             <p className="pb-[16px] text-center font-fredoka text-[32px] font-bold leading-[40px] lg:pb-[24px] text-white lg:text-[64px] lg:leading-[72px]">
-              Your Questions, Answered
+              Your Questions, Answeres
             </p>
 
             <div className="mx-auto grid grid-cols-1 gap-[24px] md:grid-cols-2">

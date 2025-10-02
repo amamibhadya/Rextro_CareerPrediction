@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect, type KeyboardEvent } from "react";
 import { autoScrollListRef } from "../hooks/use-auto-scroll";
 
@@ -52,8 +51,7 @@ Anim ullamco aliqua ad sit sint cupidatat esse esse.`;
         const updatedMessages = [...prevMessages];
         const currentAiMessage = updatedMessages[newAiMessageIndex];
 
-        currentAiMessage.text +=
-          (currentAiMessage.text ? " " : "") + words[currentWordIndex];
+        currentAiMessage.text += (currentAiMessage.text ? " " : "") + words[currentWordIndex];
 
         currentWordIndex++;
 
@@ -86,7 +84,7 @@ Anim ullamco aliqua ad sit sint cupidatat esse esse.`;
   }, []);
 
   return (
-    <div className="max-w-md w-full mx-auto mt-10 p-4 bg-neutral-800 border border-neutral-400/20 rounded-xl">
+    <div className="mx-auto mt-10 w-full max-w-md rounded-xl border border-neutral-400/20 bg-neutral-800 p-4">
       {/* <h2 className="text-2xl font-semibold mb-4 text-center font-fredoka">
         Chat Interface
       </h2> */}
@@ -98,12 +96,12 @@ Anim ullamco aliqua ad sit sint cupidatat esse esse.`;
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyPress}
           placeholder="Type your message..."
-          className="rounded-lg bg-neutral-400/20 border font-fredoka border-neutral-400/20 w-full p-3 placeholder:text-neutral-400"
+          className="font-fredoka w-full rounded-lg border border-neutral-400/20 bg-neutral-400/20 p-3 placeholder:text-neutral-400"
         />
         <button
           type="button"
           onClick={sendMessage}
-          className="rounded-lg bg-neutral-400/20 border font-fredoka border-neutral-400/20 px-4"
+          className="font-fredoka rounded-lg border border-neutral-400/20 bg-neutral-400/20 px-4"
         >
           Send
         </button>
@@ -118,10 +116,7 @@ interface MessageListProps {
 
 const MessageList = ({ messages }: MessageListProps) => {
   return (
-    <ul
-      ref={autoScrollListRef}
-      className="h-80 overflow-y-auto mb-4 space-y-2 rounded-md"
-    >
+    <ul ref={autoScrollListRef} className="mb-4 h-80 space-y-2 overflow-y-auto rounded-md">
       {messages.map((msg, index) => (
         <MessageItem key={`${index}-${msg.sender}-${msg.text}`} message={msg} />
       ))}
@@ -136,10 +131,10 @@ interface MessageItemProps {
 const MessageItem = ({ message }: MessageItemProps) => {
   return (
     <li
-      className={`p-2 rounded-md font-fredoka break-words ${
+      className={`font-fredoka rounded-md p-2 break-words ${
         message.sender === "user"
-          ? "bg-sky-400/10 self-end border border-sky-400/20 font-fredoka"
-          : "bg-neutral-400/10 border border-neutral-400/20 font-fredoka" 
+          ? "font-fredoka self-end border border-sky-400/20 bg-sky-400/10"
+          : "font-fredoka border border-neutral-400/20 bg-neutral-400/10"
       }`}
     >
       {message.text}

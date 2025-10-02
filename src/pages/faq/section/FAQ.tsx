@@ -42,11 +42,11 @@ function FAQSection() {
   };
 
   return (
-    <div className="relative rounded-[24px]  px-[14px] py-[16px] lg:px-[63px] lg:py-[56px]">
+    <div className="relative rounded-[24px] px-[14px] py-[16px] lg:px-[63px] lg:py-[56px]">
       <section className="flex">
         <div className="w-full rounded-[24px] bg-[#161616]">
-          <div className="rounded-[24px]  p-[16px] lg:p-[36px]">
-            <p className="pb-[16px] text-center font-fredoka text-[32px] font-bold leading-[40px] lg:pb-[24px] text-white lg:text-[64px] lg:leading-[72px]">
+          <div className="rounded-[24px] p-[16px] lg:p-[36px]">
+            <p className="font-fredoka pb-[16px] text-center text-[32px] leading-[40px] font-bold text-white lg:pb-[24px] lg:text-[64px] lg:leading-[72px]">
               Your Questions, Answeres
             </p>
 
@@ -58,7 +58,7 @@ function FAQSection() {
                   onClick={() => toggle(index)}
                 >
                   <div className="flex items-center justify-between">
-                    <p className="font-fredoka text-[18px] font-bold leading-[24px] text-white">
+                    <p className="font-fredoka text-[18px] leading-[24px] font-bold text-white">
                       {faq.question}
                     </p>
                     {openIndex === index ? (
@@ -68,7 +68,7 @@ function FAQSection() {
                     )}
                   </div>
                   {openIndex === index && (
-                    <p className="mt-2 font-fredoka text-[16px] font-normal leading-[24px] text-white">
+                    <p className="font-fredoka mt-2 text-[16px] leading-[24px] font-normal text-white">
                       {faq.answer}
                     </p>
                   )}

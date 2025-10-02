@@ -3,12 +3,9 @@ import React from "react";
 const RotatingCards: React.FC = () => {
   return (
     <div className="wrapper">
-      <div
-        className="inner"
-        style={{ ["--quantity" as string]: 10 } as React.CSSProperties}
-      >
+      <div className="inner" style={{ ["--quantity" as string]: 10 } as React.CSSProperties}>
         <div
-          className="font-fredoka text-white text-[40px] font-bold"
+          className="font-fredoka text-[40px] font-bold text-white"
           style={{
             transform: "translateY(-120px) rotateY(0deg)",
           }}

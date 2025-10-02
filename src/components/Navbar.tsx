@@ -127,11 +127,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="start-0 top-0 z-20 w-full p-4">
       <div className="flex items-center">
-        <img
-          src={Logo}
-          alt="logo"
-          className="h-auto w-full max-w-[80px]"
-        />
+        <img src={Logo} alt="logo" className="h-auto w-full max-w-[80px]" />
       </div>
     </nav>
   );

@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from "react";
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>

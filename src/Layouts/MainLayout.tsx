@@ -30,15 +30,10 @@ interface LayoutProps {
 
 const MainLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="mx-auto flex min-h-screen max-w-[1920px] flex-col justify-between overflow-y-hidden bg-black ">
-      
-        <Navbar />
-        <main className="mx-auto w-full flex-1">{children}</main>
-        <div className="pt-[54px]">
-          {" "}
-          {/* <Footer /> */}
-        </div>
-     
+    <div className="mx-auto flex min-h-screen max-w-[1920px] flex-col justify-between overflow-y-hidden bg-black">
+      <Navbar />
+      <main className="mx-auto w-full flex-1">{children}</main>
+      <div className="pt-[54px]"> {/* <Footer /> */}</div>
     </div>
   );
 };

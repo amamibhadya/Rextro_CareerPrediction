@@ -25,8 +25,8 @@ const Landing = () => {
         <div className="flex h-full w-full flex-col items-center justify-between xl:flex-row">
           <div className="flex w-full flex-col justify-center gap-y-[24px] xl:w-1/2">
             <div className="w-full items-center text-center">
-              <p className="font-fredoka pb-[16px] text-[72px] leading-[72px] font-bold text-white uppercase 2xl:leading-[90px]">
-                Build Imagination on your mind
+              <p className="font-fredoka pb-[16px] xl:text-[88px] text-[80px] leading-[72px] font-bold text-white uppercase 2xl:leading-[140px]">
+                Build Imagination on your mind with logic ai
               </p>
             </div>
 
@@ -36,17 +36,15 @@ const Landing = () => {
             >
               Open Chat
             </button> */}
-           <div className="codepen-button ">
-  <ModernSimpleInput
-    onClick={() => setChatOpen(true)}
-    onChange={(e) => setValue(e.target.value)}
-    placeholder="Say Hi..."
-    type="text"
-    value={value}
-    
-  />
-</div>
-
+            <div className="codepen-button">
+              <ModernSimpleInput
+                onClick={() => setChatOpen(true)}
+                onChange={(e) => setValue(e.target.value)}
+                placeholder="Say Hi..."
+                type="text"
+                value={value}
+              />
+            </div>
           </div>
 
           <div className="flex w-full xl:w-1/2">

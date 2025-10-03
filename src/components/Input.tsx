@@ -10,10 +10,10 @@ const ModernSimpleInput = forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         className={cn(
-          "flex h-20 w-full rounded-xl border px-3 py-2 text-sm ring-0 transition focus:ring-0 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+          "flex  h-20 w-full rounded-xl border px-3 py-2 text-sm ring-0 transition focus:ring-0 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
 
-          "border-neutral-400/20 bg-neutral-800 hover:bg-neutral-800/50",
-          "placeholder:text-neutral-400 focus-visible:border-neutral-400/50",
+          " bg-neutral-800 ",
+          "placeholder:text-neutral-400 ",
           // File
           "font-fredoka file:text-foreground file:border-0 file:bg-transparent file:text-sm file:font-medium",
           className,

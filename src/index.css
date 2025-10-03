@@ -244,14 +244,6 @@
   }
 }
 
-/* Utility classes for floating planets */
-.animate-float-slow {
-  animation: floatSlow 6s ease-in-out infinite;
-}
-
-.animate-float-slower {
-  animation: floatSlower 10s ease-in-out infinite;
-}
 
 /* From Uiverse.io by ilkhoeri */ 
 .wrapper {
@@ -266,8 +258,9 @@
 }
 
 .inner {
-  --w: 150px;
-  --h: 250px;
+ --w: min(15vw, 120px);
+  --h: min(30vw, 180px);
+  
   --translateZ: calc((var(--w) + var(--h)) + 0px);
   --rotateX: -15deg;
   --perspective: 1000px;
@@ -315,3 +308,51 @@
     );
 }
 
+/* home msg buttonl */
+.codepen-button {
+  position: relative;
+  border-radius: 12px; /* match your input rounded-xl */
+  z-index: 0;
+  
+}
+
+.codepen-button::before,
+.codepen-button::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    45deg,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000,
+    #fb0094,
+    #0000ff,
+    #00ff00,
+    #ffff00,
+    #ff0000
+  );
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

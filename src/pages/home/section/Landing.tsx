@@ -36,14 +36,17 @@ const Landing = () => {
             >
               Open Chat
             </button> */}
-            <ModernSimpleInput
-              onClick={() => setChatOpen(true)}
-              className="w-72"
-              onChange={(e) => setValue(e.target.value)}
-              placeholder="Type something..."
-              type="text"
-              value={value}
-            />
+           <div className="codepen-button ">
+  <ModernSimpleInput
+    onClick={() => setChatOpen(true)}
+    onChange={(e) => setValue(e.target.value)}
+    placeholder="Say Hi..."
+    type="text"
+    value={value}
+    
+  />
+</div>
+
           </div>
 
           <div className="flex w-full xl:w-1/2">

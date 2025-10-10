@@ -1,14 +1,14 @@
 import { useEffect, useRef } from "react";
 
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-const useAutoScroll = (enabled: boolean, deps: any[]) => {
+const useAutoScroll = <T extends ReadonlyArray<unknown>>(enabled: boolean, deps: T) => {
   const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     if (enabled && listRef.current) {
       return autoScrollListRef(listRef.current);
     }
-  }, [enabled, ...deps]);
+  }, [enabled, deps]);
 
   return listRef;
 };

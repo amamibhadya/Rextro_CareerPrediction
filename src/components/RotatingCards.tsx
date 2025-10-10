@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const RotatingCards: React.FC = () => {
+  const [rotationCount, setRotationCount] = useState(0);
+  const [prediction, setPrediction] = useState<string | null>(null);
+  useEffect(() => {
+    if (rotationCount < 2) {
+      const timer = setTimeout(() => {
+        setRotationCount(rotationCount + 1);
+      }, 3000); // rotation duration
+      return () => clearTimeout(timer);
+    } else if (rotationCount === 2 && !prediction) {
+      const simulatedPrediction = "Your AI Prediction Result!";
+      setPrediction(simulatedPrediction);
+    }
+  }, [rotationCount, prediction]);
+  const displayText =
+    rotationCount < 2 ? "Prediction is get Readying.... " : (prediction ?? "Loading...");
   return (
     <div className="wrapper">
       <div className="inner" style={{ ["--quantity" as string]: 10 } as React.CSSProperties}>
         <div
           className="font-fredoka text-[40px] font-bold text-white"
           style={{
-            transform: "translateY(-120px) rotateY(0deg)",
+            transform: `translateY(-120px) rotateY(${rotationCount * 180}deg)`,
+            transition: "transform 1s ease-in-out",
           }}
         >
-          Prediction Ready
+          {displayText}
         </div>
         <div
           className="card"

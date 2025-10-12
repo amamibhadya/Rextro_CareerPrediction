@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, type KeyboardEvent } from "react";
 import { autoScrollListRef } from "../hooks/use-auto-scroll";
+import { useNavigate } from "react-router-dom";
 
 interface Message {
   sender: "user" | "ai";
@@ -12,6 +13,8 @@ const PreviewUseAutoScroll = () => {
     { sender: "ai", text: "Feel free to add new messages." },
   ]);
   const [input, setInput] = useState("");
+  const navigate = useNavigate();
+  const userMessagesCount = messages.filter((msg) => msg.sender === "user").length;
 
   const typingIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -84,28 +87,36 @@ Anim ullamco aliqua ad sit sint cupidatat esse esse.`;
   }, []);
 
   return (
-    <div className="mx-auto mt-10 w-full max-w-md rounded-xl border border-neutral-400/20 bg-neutral-800 p-4">
-      {/* <h2 className="text-2xl font-semibold mb-4 text-center font-fredoka">
-        Chat Interface
-      </h2> */}
+    <div className="mx-auto flex h-[70vh] w-full flex-col rounded-xl border border-neutral-400/20 bg-neutral-800 p-4 text-white">
+      {/* Message list expands to fill available space */}
       <MessageList messages={messages} />
-      <div className="flex space-x-2">
+
+      {/* Input stays pinned at bottom */}
+      <div className="mt-auto flex space-x-2 pt-2">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyPress}
           placeholder="Type your message..."
-          className="font-fredoka w-full rounded-lg border border-neutral-400/20 bg-neutral-400/20 p-3 placeholder:text-neutral-400"
+          className="font-fredoka w-full rounded-lg border border-neutral-400/20 bg-neutral-400/20 p-3 text-white placeholder:text-white"
         />
         <button
           type="button"
           onClick={sendMessage}
-          className="font-fredoka rounded-lg border border-neutral-400/20 bg-neutral-400/20 px-4"
+          className="font-fredoka rounded-lg border border-neutral-400/20 bg-neutral-400/20 px-4 text-white"
         >
           Send
         </button>
       </div>
+      {userMessagesCount >= 2 && (
+        <button
+          onClick={() => navigate("/prediction")}
+          className="chat-button font-fredoka mt-6 w-full rounded-lg p-3 font-bold text-white"
+        >
+          Prediction is Ready
+        </button>
+      )}
     </div>
   );
 };
@@ -116,7 +127,7 @@ interface MessageListProps {
 
 const MessageList = ({ messages }: MessageListProps) => {
   return (
-    <ul ref={autoScrollListRef} className="mb-4 h-80 space-y-2 overflow-y-auto rounded-md">
+    <ul ref={autoScrollListRef} className="mb-4 space-y-2 overflow-y-auto rounded-md pt-4">
       {messages.map((msg, index) => (
         <MessageItem key={`${index}-${msg.sender}-${msg.text}`} message={msg} />
       ))}

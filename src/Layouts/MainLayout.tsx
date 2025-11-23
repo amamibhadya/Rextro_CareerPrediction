@@ -1,5 +1,5 @@
-import LiquidEther from "../components/LiquidEther";
-//import Navbar from "../components/Navbar";
+//import LiquidEther from "../components/LiquidEther";
+import Navbar from "../components/Navbar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="relative mx-auto min-h-screen w-full max-w-[1920px] overflow-y-hidden bg-[color:var(--color-main)]">
       <div className="fixed inset-0 z-10 h-full w-full">
-        <LiquidEther
+        {/* <LiquidEther
           colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
           // colors={["#FF3300", "#FF9900", "#FFD633"]}
           //colors={["#FF2200", "#FF5500", "#FFAA22"]}
@@ -29,10 +29,10 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
           takeoverDuration={0.25}
           autoResumeDelay={3000}
           autoRampDuration={0.6}
-          style={{ width: "100%", height: "100%" }} 
-        />
+          style={{ width: "100%", height: "100%" }}
+        /> */}
       </div>
-      {/* <Navbar /> */}
+      <Navbar />
       <main className="relative z-[10] px-[50px] py-[50px] xl:px-[100px]">{children}</main>
     </div>
   );

@@ -30,14 +30,14 @@
 :root {
   --color-topic: #252525;
   --color-para: #5f5f5f;
-  --color-main: #060010;
+  --color-main: #FFFCF4;
   --color-red: #b91533;
 }
 
 .dark {
   --color-topic: #ffffff;
   --color-para: #a0a0a0;
-  --color-main: #060010;
+  --color-main: #FFFCF4;
   --color-red: #d6262c;
 }
 
@@ -325,16 +325,11 @@
   border-radius: inherit;
   background: linear-gradient(
     45deg,
-    #fb0094,
-    #0000ff,
-    #00ff00,
-    #ffff00,
-    #ff0000,
-    #fb0094,
-    #0000ff,
-    #00ff00,
-    #ffff00,
-    #ff0000
+    #D9D9D9,
+    #E6D8A8,
+    #F9E9B4,
+    #FFFCF4,
+   
   );
   background-size: 400%;
   width: calc(100% + 4px);

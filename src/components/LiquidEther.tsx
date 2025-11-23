@@ -693,7 +693,9 @@ export default function LiquidEther({
             px: { value: this.simProps.cellScale },
             force: { value: new THREE.Vector2(0, 0) },
             center: { value: new THREE.Vector2(0, 0) },
-            scale: { value: new THREE.Vector2(this.simProps.cursor_size, this.simProps.cursor_size) },
+            scale: {
+              value: new THREE.Vector2(this.simProps.cursor_size, this.simProps.cursor_size),
+            },
           },
         });
         this.mouse = new THREE.Mesh(mouseG, mouseM);
@@ -984,7 +986,15 @@ export default function LiquidEther({
       }
 
       createShaderPass() {
-        if (!this.fbos.vel_0 || !this.fbos.vel_1 || !this.fbos.vel_viscous0 || !this.fbos.vel_viscous1 || !this.fbos.div || !this.fbos.pressure_0 || !this.fbos.pressure_1) {
+        if (
+          !this.fbos.vel_0 ||
+          !this.fbos.vel_1 ||
+          !this.fbos.vel_viscous0 ||
+          !this.fbos.vel_viscous1 ||
+          !this.fbos.div ||
+          !this.fbos.pressure_0 ||
+          !this.fbos.pressure_1
+        ) {
           throw new Error("Framebuffers not initialized");
         }
 
@@ -1070,7 +1080,9 @@ export default function LiquidEther({
         }
         if (!vel) return; // Safety: if viscous returned undefined, skip
         this.divergence.update({ vel });
-        const pressure: THREE.WebGLRenderTarget | undefined = this.poisson.update({ iterations: this.options.iterations_poisson });
+        const pressure: THREE.WebGLRenderTarget | undefined = this.poisson.update({
+          iterations: this.options.iterations_poisson,
+        });
         if (!pressure) return; // Safety
         this.pressure.update({ vel, pressure });
       }
